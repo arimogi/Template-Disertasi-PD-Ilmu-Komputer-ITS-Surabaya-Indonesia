@@ -1,0 +1,121 @@
+\documentclass{DISERTASI-ITS}
+Template ini masih dalam tahap pengembangan, jika ada perbaikan bisa dimasukkan ke git
+
+
+
+
+% tambahkan package yang dibutuhkan di sini
+% \numberwithin{equation}{chapter}
+% untuk teorema, jika diperlukan
+% \theoremstyle{plain}
+% \newtheorem{thm}{Teorema}[section]
+% \newtheorem{prop}[thm]{Proposisi}
+% \newtheorem{lemma}[thm]{Lemma}
+% \newtheorem*{cor}{Akibat}
+% \theoremstyle{remark}
+% \newtheorem{rmk}{Remark}
+% \renewcommand{\qedsymbol}{$ \blacksquare $}
+% \theoremstyle{definition}
+% \newtheorem{defi}{Definisi}[section]
+	
+\usepackage{datetime}
+	\newdateformat{monthdayyeardate}{%
+	\THEDAY~\monthname[\THEMONTH]~\THEYEAR}
+
+\usepackage{caption} 
+\captionsetup{margin=0pt,singlelinecheck=off,format=plain,indention=.15cm,justification=raggedright}
+
+\begin{document}
+    % hanya untuk proposal tambahkan keterangan ini.
+    \Keterangan{proposal} % kalau kosong berarti Keterangan pada lembar Judul diberi keterangan Disertasi, selain itu berarti Proposal Disertasi, 
+
+    \Judul{Judul Bahasa Indonesia} 	            % Tuliskan Judul Yang sesuai (bhs.Indonesia)
+    \JudulEng{Judul Bahasa Inggris} 			% Tuliskan Judul Yang seuai (bhs.Inggris)
+    \Nama{Nama Mahasiswa} 						% Tuliskan Nama penulis proposal tesis
+    \NRP{XXXXXXXX} 							    % Tuliskan Nrp penulis proposal tesis
+    \Jurusan{Matematika}						% Tuliskan Departement Penulis tesis
+    \Department{Mathematics}					% Tuliskan Departement Penulis tesis (bhs. Inggris)
+    \BidangStudi{Analisis dan Aljabar} 			% Tuliskan bidang sesui minat penulis
+    \Tahun{2022} 								% Tuliskan tahun pembuatan proposal tesis
+    \Fakultas{Sains dan Analitika Data} 		% Tuliskan Fakultas pembuatan proposal tesis
+    \Faculty{Science and Analytical Data} 		% Tuliskan Fakultas pembuatan proposal tesis (bhs. Inggris)
+	
+    \KepalaDep{Kepala Departemen, S.Si., M.Sc., Ph.D.}
+    \NipKepalaDep{196001311990021001}
+
+    % ===============================
+    % Pembimbing
+    % ===============================
+                                                % contoh: (Dr. Pembimbing, S.Kom., M.T.)
+    \Pembimbing{Prof. Dr. Pembimbing, M.S.} 		% Tuliskan nama pembimbing 1
+    {Dr. Pembimbing Dua, M.Si.} 					% Tuliskan nama pembimbing 2, kosongkan bila tidak ada
+    {}          							    % Tuliskan nama pembimbing 3, kosongkan bila tidak ada
+
+                                                % contoh: (198305172008121003)
+    \NIPPembimbing{196001011980031001} 			% Isi dengan NIP pembimbing 1
+    {198001012000011001} 						% Isi dengan NIP pembimbing 2 bila ada
+    {}    										% Isi dengan NIP pembimbing 3 bila ada
+
+    % ===============================
+    % Penguji
+    % ===============================
+    \Penguji{Dr. Penguji Satu, M.Si.}   	% Isi nama penguji  1  yang sesuai
+    {Dr. Dra. Penguji Dua, M.Si.}           	% Isi nama penguji  2  yang sesuai
+    {Dr. Penguji Tiga S, S.Si., M.T.}          % Isi nama penguji  3  yang bila ada 
+    	
+    \NIPPenguji{1960xxxxxxxxxxxxxx}  	% Isi Nip penguji 1 yang sesuai
+    {1960xxxxxxxxxxxxxx}             	% Isi Nip penguji 2 yang sesuai
+    {1960xxxxxxxxxxxxxx}             	% Isi Nip penguji 3 yang sesuai bila ada bila tidak kosongkan
+
+    %		
+    \TanggalDisetujui{6 Desember 2020} %  \monthdayyeardate\today   %:tanggal pelaksanaan seminar proposal (21 September 2020)  5 Desember 2020
+    \TanggalSeminar{4 Januari 2023}
+    \HariSeminar{Rabu}
+    \TempatSeminar{Ruang Sidang II Departemen Matematika, Gedung U Lantai 2}
+    \TanggalUjian{11 Februari 2023}
+    \PeriodeWisuda{Dua}
+    
+    \BagianAwal
+    
+    \LembarJudul  % menampilkan halaman judul
+    \TitlePage
+    %\LembarPersetujuan % Menampilkan Lembar Persetujuan Seminar oleh Promotor
+    \LembarPengesahan % Menampilkan Lembar Pengesahan Seminar Proposal oleh promotor dan penguji
+    %\LembarPengesahanDisertasi % Menampilkan Lembar Pengesahan Disertasi
+
+    %==================
+    %  ABSTRAK
+    %==================    
+    \begin{Abstrak} % Abstrak bhs. Indonesia
+        \input{AbstrakInd/AbstrakInd} % isikan foder dan file abstrakind.tex
+    \end{Abstrak}    	
+    \begin{Abstract} % Abstrak bhs. Inggris
+        \input{AbstrakEnglish/AbstrakEnglish} %  isikan folder dan file abstrakenglish.tex
+    \end{Abstract}
+
+    %===============================
+    %  Daftar Isi, Gambar, Tabel
+    %===============================
+    \DaftarIsi % menampilkan secara otomatis semua Daftar Isi tesis
+    \DaftarGambar
+    \DaftarTabel
+
+    %===============================
+    %  Isi Disertasi
+    %===============================    
+    \BagianInti
+    %========>  Proposal Disertasi
+    \input{BabI/BabI} % isikan nama folder dan file BabI.tex sebagai Bab pendahuluan    
+    \input{BabII/BabII} % isikan nama folder dan file BabII.tex  
+    \input{BabIII/Bab3} % isikan nama folder dan nama file Bab3.tex    
+    
+    %========>  Disertasi Lengkap, kosongkan jika masih proposal
+    \input{BabIV/Bab4}
+    \input{BabV/Bab5}
+
+    %======================================
+    %  Penutup, Bagian akhir disertasi
+    %======================================
+    \DaftarPustaka{ReferensiDisertasi}	
+    	
+\end{document}
